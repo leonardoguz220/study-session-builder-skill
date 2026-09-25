@@ -1,12 +1,9 @@
 # Study Session Builder
 
-Skill para organizar el tiempo de estudio antes de un examen. Recibe una materia,
+Study Session Builder es una skill para organizar el tiempo de estudio antes de un examen. Recibe una materia,
 una fecha, temas y disponibilidad diaria; genera un **plan Markdown con sesiones,
 repaso y descansos incluidos en el presupuesto**. Las prioridades son opcionales y
 solo proceden de lo que indique explícitamente el estudiante.
-
-Proyecto académico con Python 3.10+, biblioteca estándar, 25 pruebas automáticas y
-una demo que ejecuta un caso exitoso y un caso inválido.
 
 ## Problema que resuelve
 
