@@ -1,0 +1,10 @@
+{
+  "review_ratio": 0.20,
+  "priority_weight": 2.0,
+  "normal_weight": 1.0,
+  "default_max_session_minutes": 50,
+  "min_allowed_session_minutes": 20,
+  "max_allowed_session_minutes": 120,
+  "recommended_min_content_minutes_per_topic": 40,
+  "break_minutes": 10
+}
