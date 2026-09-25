@@ -1,0 +1,61 @@
+Ejecución real: 2026-09-25T14:19:16.261617+00:00
+Python: 3.12.14
+
+$ python .codex/skills/study-session-builder/scripts/validate_input.py examples/valid_input.json
+[OK] Entrada válida.
+
+Código de salida: 0 (esperado: 0)
+
+$ python .codex/skills/study-session-builder/scripts/build_schedule.py examples/valid_input.json
+[OK] Plan generado: output/study-plan.md
+Tiempo: 424 min contenido + 106 min repaso + 100 min descansos = 630 min.
+
+Código de salida: 0 (esperado: 0)
+
+$ python .codex/skills/study-session-builder/scripts/build_schedule.py examples/invalid_input.json
+
+[ERROR] Cada prioridad debe existir exactamente en topics.
+Código de salida: 2 (esperado: 2)
+
+$ python .codex/skills/study-session-builder/scripts/demo.py
+[OK] Entrada válida.
+[OK] Plan generado: /workspace/scratch/ccb7672fe23d/study-session-builder-skill/output/study-plan.md
+Tiempo: 424 min contenido + 106 min repaso + 100 min descansos = 630 min.
+[ERROR] Cada prioridad debe existir exactamente en topics.
+DEMO COMPLETA: ambos casos se comportaron como se esperaba.
+
+Código de salida: 0 (esperado: 0)
+
+$ python -m unittest discover -s tests -v
+
+test_availability_dates (test_skill.StudySkillTests.test_availability_dates) ... ok
+test_cli_invalid_does_not_write_output (test_skill.StudySkillTests.test_cli_invalid_does_not_write_output) ... ok
+test_cli_success_from_another_directory (test_skill.StudySkillTests.test_cli_success_from_another_directory) ... ok
+test_dates_invalid_today_past (test_skill.StudySkillTests.test_dates_invalid_today_past) ... ok
+test_demo (test_skill.StudySkillTests.test_demo) ... ok
+test_duplicate_topics (test_skill.StudySkillTests.test_duplicate_topics) ... ok
+test_empty_fields (test_skill.StudySkillTests.test_empty_fields) ... ok
+test_file_errors (test_skill.StudySkillTests.test_file_errors) ... ok
+test_input_not_mutated (test_skill.StudySkillTests.test_input_not_mutated) ... ok
+test_invalid_rules (test_skill.StudySkillTests.test_invalid_rules) ... ok
+test_maximum_default (test_skill.StudySkillTests.test_maximum_default) ... ok
+test_minutes_types_and_bounds (test_skill.StudySkillTests.test_minutes_types_and_bounds) ... ok
+test_negative_availability (test_skill.StudySkillTests.test_negative_availability) ... ok
+test_no_priority_is_balanced (test_skill.StudySkillTests.test_no_priority_is_balanced) ... ok
+test_priority_receives_more_time (test_skill.StudySkillTests.test_priority_receives_more_time) ... ok
+test_review_is_in_schedule (test_skill.StudySkillTests.test_review_is_in_schedule) ... ok
+test_rules_are_used (test_skill.StudySkillTests.test_rules_are_used) ... ok
+test_scarce_time_and_zero_topic_warning (test_skill.StudySkillTests.test_scarce_time_and_zero_topic_warning) ... ok
+test_session_limit_across_budgets (test_skill.StudySkillTests.test_session_limit_across_budgets) ... ok
+test_template_really_loaded (test_skill.StudySkillTests.test_template_really_loaded) ... ok
+test_time_conservation (test_skill.StudySkillTests.test_time_conservation) ... ok
+test_unknown_and_missing_fields (test_skill.StudySkillTests.test_unknown_and_missing_fields) ... ok
+test_unknown_priority (test_skill.StudySkillTests.test_unknown_priority) ... ok
+test_valid_input (test_skill.StudySkillTests.test_valid_input) ... ok
+test_wrong_container_types (test_skill.StudySkillTests.test_wrong_container_types) ... ok
+
+----------------------------------------------------------------------
+Ran 25 tests in 1.533s
+
+OK
+Código de salida: 0 (esperado: 0)
