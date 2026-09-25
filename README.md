@@ -49,7 +49,10 @@ examples/
 └── expected-study-plan.md
 tests/test_skill.py
 evidence/
-├── README.md
+├── 01-caso-exitoso.png
+├── 02-plan-generado.png
+├── 03-entrada-invalida.png
+├── 04-pruebas-automaticas.png
 └── verification.txt
 output/.gitkeep
 README.md
@@ -175,8 +178,9 @@ Con la entrada anterior se generan 15 sesiones y la siguiente distribución:
 | Descansos | 100 |
 | **Total** | **630** |
 
-El 25 de septiembre contiene tres sesiones de 34, 33 y 33 minutos, separadas por
-dos descansos de 10 minutos: **120 minutos exactos**. Consulta el
+El 25 de septiembre contiene tres sesiones de estudio de 34, 33 y 33 minutos,
+que suman 100 minutos de estudio. Entre ellas hay dos descansos de 10 minutos,
+por lo que la jornada completa ocupa exactamente 120 minutos. Consulta el
 [plan completo generado](examples/expected-study-plan.md).
 
 El límite de 20 minutos se aplica al valor configurable de la duración máxima,
@@ -241,37 +245,14 @@ La comprobación de límites recorre los presupuestos de 1 a 1440 minutos para m
 La descripción detallada del algoritmo y de los parámetros está en
 [study-method.md](.codex/skills/study-session-builder/references/study-method.md).
 
-## Presentación individual: guía de 5–7 minutos
+## Evidencias
 
-1. **Problema, 45 s:** «Esta skill transforma mis temas y mi disponibilidad en un
-   plan antes del examen, con sesiones, descansos y repaso».
-2. **Estructura, 60 s:** muestra `SKILL.md`, su descripción, los scripts, la plantilla
-   y las referencias. Explica que una skill guía al agente y que los scripts hacen
-   el cálculo reproducible.
-3. **Entrada, 45 s:** muestra el JSON; explica las prioridades opcionales.
-4. **Caso exitoso, 90 s:** ejecuta la demo y abre `output/study-plan.md`. Explica la
-   igualdad `424 + 106 + 100 = 630` y una jornada concreta.
-5. **Error controlado, 45 s:** ejecuta el generador con `output/demo-invalid.json`.
-   Explica que el código 2 señala una entrada inválida sin un traceback técnico.
-6. **Pruebas, 45 s:** ejecuta unittest y muestra las 25 pruebas correctas.
-7. **Cierre, 30 s:** muestra cómo cambiar la plantilla o el porcentaje de repaso
-   permite adaptar el resultado; señala que los temas solo se priorizan a petición.
+La carpeta `evidence/` contiene capturas reales del funcionamiento de la skill:
 
-Antes de exponer, ensaya los comandos y verifica que Python esté disponible.
-El proyecto cubre los componentes de la rúbrica; la nota también depende de la
-explicación individual y de la evaluación docente.
+- `01-caso-exitoso.png`: ejecución correcta de la demo.
+- `02-plan-generado.png`: resultado Markdown generado.
+- `03-entrada-invalida.png`: manejo controlado de una entrada incorrecta.
+- `04-pruebas-automaticas.png`: ejecución exitosa de las 25 pruebas.
 
-| Criterio de la rúbrica | Evidencia preparada |
-| --- | --- |
-| Funcionalidad, 35 puntos | Generador, demo y plan real |
-| Estructura, 20 puntos | Skill y las tres carpetas con uso documentado |
-| Documentación, 15 puntos | Instalación, contrato, algoritmo y ejemplos |
-| Pruebas y errores, 15 puntos | 25 tests y caso inválido controlado |
-| Presentación individual, 15 puntos | Guía y comandos reproducibles para ensayar |
-
-## Evidencias y capturas
-
-Consulta [evidence/README.md](evidence/README.md). El archivo
-[evidence/verification.txt](evidence/verification.txt) contiene la salida real de
-la validación, generación, caso inválido, demo y unittest. Las capturas sugeridas
-se deben obtener ejecutando los comandos; no se incluyen imágenes simuladas.
+Además, `evidence/verification.txt` contiene la salida registrada de la
+validación, generación, caso inválido, demo y pruebas automáticas.
