@@ -1,0 +1,4 @@
+interface:
+  display_name: "Planificador de sesiones de estudio"
+  short_description: "Organiza temas, repasos y descansos antes del examen"
+  default_prompt: "Usa $study-session-builder para organizar mis temas y mi tiempo disponible antes del examen."
